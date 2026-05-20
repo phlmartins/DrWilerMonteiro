@@ -703,6 +703,10 @@ img { max-width: 100%; display: block; }
   object-fit: contain;
   padding: 6px;
 }
+.servico-card__svg {
+  width: 80px;
+  height: 80px;
+}
 
 .servico-card__badge {
   display: inline-block;
