@@ -1103,13 +1103,14 @@ img { max-width: 100%; display: block; }
   }
 
   .nav.open a {
-    padding: 16px 0;
-    border-bottom: 1px solid #dbeafe;
+    padding: 12px 16px;
     font-size: 1.1rem;
     color: #1e293b !important;
     background: transparent !important;
     box-shadow: none !important;
-    border-radius: 0 !important;
+    border-radius: 100px !important;
+    transition: color .3s ease, background .3s ease;
+    width: fit-content;
   }
 
   .nav.open a:hover,
@@ -1117,8 +1118,6 @@ img { max-width: 100%; display: block; }
     color: var(--primary) !important;
     background: var(--primary-lt) !important;
     box-shadow: none !important;
-    border-radius: 8px !important;
-    padding-left: 12px !important;
   }
 
   .nav__cta {
