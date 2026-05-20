@@ -9,12 +9,22 @@
   <meta property="og:description" content="Especialistas em implantes dentários, periodontia e clareamento. Agende pelo WhatsApp." />
   <meta property="og:type" content="website" />
   <title>Wiler Monteiro Implantodontia e Periodontia</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-inner">
+      <img src="assets/logo.jpg" alt="Wiler Monteiro" class="loading-logo" />
+      <div class="loading-bar"><div class="loading-progress"></div></div>
+      <p>Carregando...</p>
+    </div>
+  </div>
 
   <!-- ===== HEADER ===== -->
   <header class="header" id="header">
@@ -38,6 +48,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
+    <canvas class="hero__particles" id="particlesCanvas"></canvas>
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <span class="hero__tag">Especialista em Saúde Bucal</span>
@@ -266,6 +277,75 @@
           </a>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">O que dizem nossos pacientes</span>
+        <h2 class="section-title">Depoimentos</h2>
+        <p class="section-subtitle">A satisfação dos nossos pacientes é a nossa maior conquista.</p>
+      </div>
+      <div class="depoimentos__slider" id="depoimentosSlider">
+        <div class="depoimentos__track" id="depoimentosTrack">
+
+          <div class="depoimento-card">
+            <div class="depoimento-card__stars">★★★★★</div>
+            <p>"Profissional excepcional! O Dr. Wiler realizou meu implante com total segurança e cuidado. Resultado incrível, superou todas as minhas expectativas."</p>
+            <div class="depoimento-card__autor">
+              <div class="depoimento-card__avatar">M</div>
+              <div>
+                <strong>Maria Silva</strong>
+                <span>Implante Dentário</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div class="depoimento-card__stars">★★★★★</div>
+            <p>"Tratei minha periodontite com o Dr. Wiler e o resultado foi extraordinário. Atendimento humanizado, explicou cada etapa do tratamento com clareza."</p>
+            <div class="depoimento-card__autor">
+              <div class="depoimento-card__avatar">J</div>
+              <div>
+                <strong>João Oliveira</strong>
+                <span>Periodontia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div class="depoimento-card__stars">★★★★★</div>
+            <p>"Fiz o clareamento dental e fiquei impressionada com o resultado. Sorriso muito mais branco e bonito. Clínica moderna e equipe super atenciosa!"</p>
+            <div class="depoimento-card__autor">
+              <div class="depoimento-card__avatar">A</div>
+              <div>
+                <strong>Ana Costa</strong>
+                <span>Clareamento Dental</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div class="depoimento-card__stars">★★★★★</div>
+            <p>"Melhor dentista de Goiânia! Ambiente impecável, tecnologia de ponta e um atendimento que realmente acolhe o paciente. Recomendo a todos!"</p>
+            <div class="depoimento-card__autor">
+              <div class="depoimento-card__avatar">R</div>
+              <div>
+                <strong>Roberto Mendes</strong>
+                <span>Implante Dentário</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="depoimentos__controls">
+        <button class="dep-btn" id="depPrev" aria-label="Anterior">&#8592;</button>
+        <div class="dep-dots" id="depDots"></div>
+        <button class="dep-btn" id="depNext" aria-label="Próximo">&#8594;</button>
       </div>
     </div>
   </section>
