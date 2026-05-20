@@ -1080,20 +1080,54 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 700px) {
   .nav { display: none; flex-direction: column; gap: 0; }
+
+  /* Fix: backdrop-filter no header cria stacking context que impede
+     position:fixed de funcionar corretamente em filhos. Solução: remover
+     backdrop-filter do header no mobile. */
+  .header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #ffffff !important;
+  }
+
   .nav.open {
     display: flex;
     position: fixed;
     top: 72px; left: 0; right: 0; bottom: 0;
-    background: var(--white);
+    background: #ffffff;
     padding: 32px 24px;
-    z-index: 99;
+    z-index: 200;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,.12);
   }
+
   .nav.open a {
     padding: 16px 0;
-    border-bottom: 1px solid var(--gray-4);
+    border-bottom: 1px solid #dbeafe;
     font-size: 1.1rem;
+    color: #1e293b !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
   }
-  .nav__cta { border-radius: 0 !important; background: none !important; color: var(--primary) !important; box-shadow: none !important; }
+
+  .nav.open a:hover,
+  .nav.open a:active {
+    color: var(--primary) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .nav__cta {
+    margin-top: 16px;
+    border-radius: 8px !important;
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    text-align: center;
+    padding: 14px 0 !important;
+  }
 
   .hamburger { display: flex; }
 
