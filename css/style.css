@@ -709,12 +709,12 @@ img { max-width: 100%; display: block; }
 }
 .servico-card__icon--foto {
   width: 100%;
-  height: 180px;
+  height: 110px;
   border-radius: var(--radius);
   overflow: hidden;
   border: none;
   box-shadow: 0 4px 16px rgba(21,101,192,.12);
-  margin-bottom: 20px;
+  margin-bottom: 48px;
 }
 .servico-card__foto {
   width: 100%;
