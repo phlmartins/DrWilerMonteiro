@@ -1121,13 +1121,17 @@ img { max-width: 100%; display: block; }
   }
 
   .nav__cta {
-    margin-top: 16px;
-    border-radius: 8px !important;
-    background: var(--primary) !important;
-    color: #ffffff !important;
+    background: transparent !important;
+    color: #1e293b !important;
     box-shadow: none !important;
-    text-align: center;
-    padding: 14px 0 !important;
+    border-radius: 100px !important;
+    padding: 12px 16px !important;
+    font-weight: 500 !important;
+  }
+  .nav.open .nav__cta:hover,
+  .nav.open .nav__cta:active {
+    color: var(--primary) !important;
+    background: var(--primary-lt) !important;
   }
 
   .hamburger { display: flex; }
