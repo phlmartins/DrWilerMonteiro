@@ -714,7 +714,16 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   border: none;
   box-shadow: 0 4px 16px rgba(21,101,192,.12);
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+}
+
+/* Badge abaixo da foto, sem position absolute */
+.servico-card__icon--foto + .servico-card__badge {
+  position: relative;
+  top: auto;
+  right: auto;
+  display: inline-block;
+  margin-bottom: 12px;
 }
 .servico-card__foto {
   width: 100%;
