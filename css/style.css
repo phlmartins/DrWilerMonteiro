@@ -1115,8 +1115,10 @@ img { max-width: 100%; display: block; }
   .nav.open a:hover,
   .nav.open a:active {
     color: var(--primary) !important;
-    background: transparent !important;
+    background: var(--primary-lt) !important;
     box-shadow: none !important;
+    border-radius: 8px !important;
+    padding-left: 12px !important;
   }
 
   .nav__cta {
