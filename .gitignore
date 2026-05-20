@@ -1,0 +1,10 @@
+.claude/
+.netlify/
+node_modules/
+server.js
+baixar-foto.js
+file.enc
+logo.png
+Dr Wiler.html
+Dr Wiler_files/
+*.log
