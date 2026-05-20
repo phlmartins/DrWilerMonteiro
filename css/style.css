@@ -1081,9 +1081,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 700px) {
   .nav { display: none; flex-direction: column; gap: 0; }
 
-  /* Fix: backdrop-filter no header cria stacking context que impede
-     position:fixed de funcionar corretamente em filhos. Solução: remover
-     backdrop-filter do header no mobile. */
+  /* Fix: backdrop-filter no header cria stacking context — removido no mobile */
   .header {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -1092,14 +1090,17 @@ img { max-width: 100%; display: block; }
 
   .nav.open {
     display: flex;
-    position: fixed;
-    top: 72px; left: 0; right: 0; bottom: 0;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    bottom: auto;
     background: #ffffff;
-    padding: 32px 24px;
+    padding: 12px 16px 16px;
     z-index: 200;
     flex-direction: column;
     overflow-y: auto;
-    box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    box-shadow: 0 8px 24px rgba(21,101,192,.12);
+    border-top: 1px solid var(--gray-4);
+    border-radius: 0 0 16px 16px;
   }
 
   .nav.open a {
