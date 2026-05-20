@@ -24,13 +24,12 @@ hamburger.addEventListener('click', () => {
   nav.classList.toggle('open');
   const isOpen = nav.classList.contains('open');
   hamburger.setAttribute('aria-expanded', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
 nav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
-    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', false);
   });
 });
 
