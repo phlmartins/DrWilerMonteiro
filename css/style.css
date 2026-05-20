@@ -726,6 +726,10 @@ img { max-width: 100%; display: block; }
   margin-bottom: 10px;
   position: relative;
   z-index: 2;
+  transition: color .5s ease;
+}
+.servico-card:hover h3 {
+  color: var(--primary-dk);
 }
 .servico-card p {
   color: var(--gray-3);
@@ -734,6 +738,10 @@ img { max-width: 100%; display: block; }
   text-align: justify;
   position: relative;
   z-index: 2;
+  transition: color .5s ease;
+}
+.servico-card:hover p {
+  color: #1a2a3a;
 }
 
 .servico-card__link {
