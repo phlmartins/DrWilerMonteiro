@@ -313,6 +313,7 @@ img { max-width: 100%; display: block; }
   width: auto;
   object-fit: contain;
   border-radius: 12px;
+  background: transparent;
   flex-shrink: 0;
   filter: drop-shadow(0 4px 16px rgba(0,0,0,.3));
 }
@@ -924,7 +925,7 @@ img { max-width: 100%; display: block; }
   height: 120px;
   width: auto;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 12px;
   background: rgba(255,255,255,.08);
   padding: 4px;
 }
