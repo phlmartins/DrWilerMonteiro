@@ -141,11 +141,25 @@ const prevBtn  = document.getElementById('depPrev');
 const nextBtn  = document.getElementById('depNext');
 
 if (track) {
+  const slider    = document.getElementById('depoimentosSlider');
   const cards     = track.querySelectorAll('.depoimento-card');
   let current     = 0;
   let perView     = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
   const total     = cards.length;
+  const gap       = 24;
   const maxIndex  = () => total - perView;
+
+  // Calcula e aplica largura real dos cards com base na área útil do track
+  function setCardWidths() {
+    const trackW = track.offsetWidth - 24; // desconta padding 12px de cada lado
+    const cardW  = Math.floor((trackW - gap * (perView - 1)) / perView);
+    cards.forEach(c => {
+      c.style.width    = cardW + 'px';
+      c.style.minWidth = cardW + 'px';
+      c.style.maxWidth = cardW + 'px';
+    });
+    return cardW;
+  }
 
   // Criar dots
   for (let i = 0; i <= maxIndex(); i++) {
@@ -157,13 +171,17 @@ if (track) {
 
   function goTo(idx) {
     current = Math.max(0, Math.min(idx, maxIndex()));
-    const cardWidth = cards[0].offsetWidth + 24;
-    track.style.transform = `translateX(-${current * cardWidth}px)`;
+    const cardW = setCardWidths();
+    track.style.transform = `translateX(-${current * (cardW + gap)}px)`;
     dotsWrap.querySelectorAll('.dep-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Init — aguarda fontes/imagens carregarem para offsetWidth correto
+  setCardWidths();
+  window.addEventListener('load', () => setCardWidths());
 
   // Auto-play
   setInterval(() => goTo(current >= maxIndex() ? 0 : current + 1), 5000);
